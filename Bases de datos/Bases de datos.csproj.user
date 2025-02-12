@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Iniciosesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanacliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ventanaclientesagregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanainventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanainventarioagregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VentanaInventarioinventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanainvntarioproveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanavendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanaventa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanaventaagregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ventanaventabuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

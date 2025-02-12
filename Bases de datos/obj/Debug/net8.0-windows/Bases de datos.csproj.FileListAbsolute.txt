@@ -1,0 +1,65 @@
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Form2.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanacliente.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanainventario.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanaventa.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.csproj.GenerateResource.cache
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.AssemblyInfoInputs.cache
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.AssemblyInfo.cs
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.csproj.CoreCompileInputs.cache
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Bases de datos.exe
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Bases de datos.deps.json
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Bases de datos.runtimeconfig.json
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Bases de datos.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Bases de datos.pdb
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\refint\Bases de datos.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.pdb
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.genruntimeconfig.cache
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\ref\Bases de datos.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Principal.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanaventabuscar.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanaventaagregar.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanainventarioagregar.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.VentanaInventarioinventario.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanainvntarioproveedor.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Ventanavendedores.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Accelergreat.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Accelergreat.EntityFramework.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Accelergreat.EntityFramework.PostgreSql.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Namotion.Reflection.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\NJsonSchema.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\NJsonSchema.Annotations.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Npgsql.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de datos.csproj.AssemblyReference.cache
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases de.C607EC72.Up2Date
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.ventanaclientesagregar.resources
+C:\Users\cower\source\repos\Bases de datos\Bases de datos\obj\Debug\net8.0-windows\Bases_de_datos.Iniciosesion.resources
