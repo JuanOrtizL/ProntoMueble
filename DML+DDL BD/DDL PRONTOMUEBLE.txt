@@ -1,0 +1,268 @@
+CREATE SEQUENCE proveedor_idproveedor_seq
+    START 3
+    INCREMENT 7
+    MINVALUE 1
+    CYCLE;
+
+
+CREATE TABLE proveedor(
+    id_proveedor BIGINT DEFAULT nextval('proveedor_idproveedor_seq'),
+    nombre VARCHAR(30) NOT NULL,
+    persona_contacto VARCHAR(30) NOT NULL,
+    direccion VARCHAR(45) NOT NULL,
+    PRIMARY KEY (id_proveedor)
+);
+
+
+
+CREATE TABLE telefono_proveedor(
+    id_proveedor INT NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    PRIMARY KEY (id_proveedor, telefono),
+    FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor)
+);
+
+CREATE TABLE color(
+    id_color SERIAL NOT NULL,
+    nombre VARCHAR(15) NOT NULL,
+    PRIMARY KEY (id_color)
+);
+
+CREATE TABLE material(
+    id_material SERIAL NOT NULL,
+    nombre VARCHAR(25) NOT NULL,
+    PRIMARY KEY (id_material)
+);
+
+CREATE TABLE tipo(
+    id_tipo SERIAL NOT NULL,
+    nombre VARCHAR(15) NOT NULL,
+    PRIMARY KEY (id_tipo)
+);
+
+CREATE TABLE mueble(
+    id_mueble SERIAL NOT NULL,
+    alto_dimensiones INT NOT NULL,
+    ancho_dimensiones INT NOT NULL,
+    largo_dimensiones INT NOT NULL,
+    precio INT NOT NULL,
+    stock INT NOT NULL,
+    id_color INT NOT NULL,
+    id_material INT NOT NULL,
+    id_tipo INT NOT NULL,
+    id_proveedor BIGINT NOT NULL,
+    PRIMARY KEY (id_mueble),
+    FOREIGN KEY (id_color) REFERENCES color(id_color),
+    FOREIGN KEY (id_material) REFERENCES material(id_material),
+    FOREIGN KEY (id_tipo) REFERENCES tipo(id_tipo),
+    FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor)
+);
+
+CREATE TABLE cliente(
+    id_cliente SERIAL NOT NULL,
+    nombre VARCHAR(20) NOT NULL,
+    direccion VARCHAR(40) ,
+    email VARCHAR(30) UNIQUE,
+    fecha_registro DATE NOT NULL,
+    PRIMARY KEY (id_cliente)
+);
+
+CREATE TABLE telefono_cliente(
+    id_cliente INT NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    PRIMARY KEY (id_cliente,telefono),
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
+
+);
+
+CREATE SEQUENCE vendedor_idvendedor_seq
+    START 4
+    INCREMENT 8
+    MINVALUE 1
+    CYCLE;
+
+CREATE TABLE vendedor(
+    id_vendedor BIGINT DEFAULT nextval('vendedor_idvendedor_seq'),
+    nombre VARCHAR(20) NOT NULL,
+    email VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    PRIMARY KEY(id_vendedor)
+);
+
+
+CREATE SEQUENCE venta_idventa_seq
+    START 2
+    INCREMENT 3
+    MINVALUE 1
+    CYCLE;
+
+
+CREATE TABLE venta(
+    id_venta BIGINT DEFAULT nextval('venta_idventa_seq'),
+    id_cliente INT NOT NULL,
+    id_vendedor BIGINT NOT NULL,
+    fecha DATE NOT NULL,
+    total NUMERIC(10,2) DEFAULT 0,
+    PRIMARY KEY(id_venta),
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+    FOREIGN KEY (id_vendedor) REFERENCES vendedor(id_vendedor)
+
+);
+
+CREATE TABLE mueble_venta(
+    id_venta BIGINT NOT NULL,
+    id_mueble INT NOT NULL,
+    cantidad INT NOT NULL,
+    subtotal NUMERIC(10,2) NOT NULL,
+    PRIMARY KEY (id_venta, id_mueble),
+    FOREIGN KEY (id_venta) REFERENCES venta(id_venta),
+    FOREIGN KEY (id_mueble) REFERENCES mueble(id_mueble)
+
+);
+
+
+
+CREATE SEQUENCE pago_idpago_seq
+    START 2
+    INCREMENT 5
+    MINVALUE 1
+    CYCLE;
+
+CREATE TABLE pago(
+    id_venta BIGINT NOT NULL,
+    id_pago BIGINT DEFAULT nextval('pago_idpago_seq'),
+    medio_pago VARCHAR(20) NOT NULL,
+    monto NUMERIC(10,2) NOT NULL,
+    FOREIGN KEY (id_venta) REFERENCES venta(id_venta)
+
+);
+
+CREATE SEQUENCE administrador_idadmin_seq
+    START 5
+    INCREMENT 17
+    MINVALUE 1
+    CYCLE;
+
+CREATE TABLE administrador(
+    id_admin BIGINT DEFAULT nextval('administrador_idadmin_seq'),
+    nombre VARCHAR(20) NOT NULL,
+    email VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    PRIMARY KEY(id_admin)
+);
+
+
+--------------------------------------------------- VISTAS -----------------------------
+
+-- Cliente que gasto mas en un mes
+
+CREATE VIEW mayor_comprador AS
+SELECT c.id_cliente, c.nombre, SUM(v.total) AS total_gastado
+FROM cliente c
+JOIN venta v ON c.id_cliente = v.id_cliente
+WHERE DATE_PART('month', v.fecha) = DATE_PART('month', CURRENT_DATE) AND
+      DATE_PART('year', v.fecha) = DATE_PART('year', CURRENT_DATE)
+GROUP BY c.id_cliente, c.nombre
+ORDER BY total_gastado DESC
+LIMIT 5;
+
+SELECT * FROM mayor_comprador;
+
+-- Clientes nuevos (cada mes)
+
+CREATE VIEW nuevos_clientes AS
+SELECT * 
+FROM cliente
+WHERE DATE_PART('year', fecha_registro) = DATE_PART('year', CURRENT_DATE)
+AND DATE_PART('month', fecha_registro) = DATE_PART('month', CURRENT_DATE);
+
+
+SELECT * FROM nuevos_clientes;
+
+
+-- Cual vendedor realizo más ventas durante un mes 
+
+
+CREATE VIEW mr_ventas 
+AS
+SELECT v.id_vendedor, v.nombre, SUM(ve.total) AS total_ventas
+FROM venta ve
+JOIN vendedor v ON ve.id_vendedor = v.id_vendedor
+WHERE DATE_PART('year', ve.fecha) = DATE_PART('year', CURRENT_DATE)
+AND DATE_PART('month', ve.fecha) = DATE_PART('month', CURRENT_DATE)
+GROUP BY v.id_vendedor, v.nombre
+ORDER BY total_ventas DESC
+LIMIT 1;
+
+
+SELECT * FROM mr_ventas;
+
+-- Cual es el producto mas vendido durante un mes 
+
+CREATE VIEW most_sold AS
+SELECT m.id_mueble, t.nombre, m.precio, m.stock, SUM(mv.cantidad) AS total_vendidos
+FROM venta v JOIN mueble_venta mv ON v.id_venta = mv.id_venta
+JOIN mueble m ON mv.id_mueble = m.id_mueble
+JOIN tipo t ON m.id_tipo = t.id_tipo
+WHERE DATE_PART('year', v.fecha) = DATE_PART('year', CURRENT_DATE)
+AND DATE_PART('month', v.fecha) = DATE_PART('month', CURRENT_DATE)
+GROUP BY m.id_mueble, t.nombre, m.alto_dimensiones, m.ancho_dimensiones, m.largo_dimensiones, m.precio, m.stock
+ORDER BY total_vendidos DESC
+LIMIT 1;
+
+SELECT * FROM most_sold;
+
+
+------------------------------------Sp y triggers------------------------------------------
+-- Actualizar stock
+
+CREATE OR REPLACE FUNCTION actualizar_stock_mueble()
+RETURNS TRIGGER 
+AS 
+$$
+BEGIN
+  UPDATE mueble
+  SET stock = stock - NEW.cantidad
+  WHERE id_mueble = NEW.id_mueble;
+  RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER trigger_actualizar_stock
+AFTER INSERT ON mueble_venta
+FOR EACH ROW
+EXECUTE FUNCTION actualizar_stock_mueble();
+
+
+INSERT INTO mueble_venta (id_venta, id_mueble, cantidad, subtotal)
+VALUES (2, 5, 2, 200.00);
+
+
+-- Calcular el Total Venta
+
+CREATE OR REPLACE FUNCTION actualizar_total_venta()
+RETURNS TRIGGER
+AS 
+$$
+BEGIN
+    UPDATE venta
+    SET total = (
+        SELECT COALESCE(SUM(mv.cantidad * m.precio), 0)
+        FROM mueble_venta mv
+        JOIN mueble m ON mv.id_mueble = m.id_mueble
+        WHERE mv.id_venta = NEW.id_venta
+    )
+    WHERE id_venta = NEW.id_venta;
+
+    RETURN NEW;
+END;
+$$ 
+LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_actualizar_total
+AFTER INSERT OR UPDATE ON mueble_venta
+FOR EACH ROW
+EXECUTE FUNCTION actualizar_total_venta();
+
+
