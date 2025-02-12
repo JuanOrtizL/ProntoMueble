@@ -50,7 +50,7 @@ namespace Bases_de_datos
         {
             int.TryParse(textBox2.Text, out int idcliente);
 
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -70,7 +70,7 @@ namespace Bases_de_datos
                         using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
                         {
                             DataTable dt = new DataTable();
-                            adapter.Fill(dt);
+                            adapter.Fill(dt);       
 
                             // 8. Muestra los resultados en el RichTextBox
                             richTextBox1.Clear(); // Limpia el RichTextBox antes de mostrar nuevos resultados

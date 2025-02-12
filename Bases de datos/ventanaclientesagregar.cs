@@ -58,7 +58,7 @@ namespace Bases_de_datos
 
         private int InsertarCliente(string nombre, string direccion, string email, DateTime fechaRegistro)
         {
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -87,7 +87,7 @@ namespace Bases_de_datos
 
         private bool InsertarTelefono(int idCliente, string telefono)
         {
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {

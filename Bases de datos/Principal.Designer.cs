@@ -35,6 +35,7 @@
             button4 = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -54,9 +55,9 @@
             // 
             button1.BackColor = Color.Bisque;
             button1.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button1.Location = new Point(30, 249);
+            button1.Location = new Point(170, 296);
             button1.Name = "button1";
-            button1.Size = new Size(222, 305);
+            button1.Size = new Size(219, 293);
             button1.TabIndex = 1;
             button1.Text = "VENTAS";
             button1.UseVisualStyleBackColor = false;
@@ -66,7 +67,7 @@
             // 
             button2.BackColor = Color.Bisque;
             button2.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.Location = new Point(378, 249);
+            button2.Location = new Point(395, 295);
             button2.Name = "button2";
             button2.Size = new Size(356, 147);
             button2.TabIndex = 2;
@@ -78,9 +79,9 @@
             // 
             button3.BackColor = Color.Bisque;
             button3.Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button3.Location = new Point(839, 249);
+            button3.Location = new Point(757, 295);
             button3.Name = "button3";
-            button3.Size = new Size(246, 316);
+            button3.Size = new Size(243, 294);
             button3.TabIndex = 3;
             button3.Text = "CLIENTES";
             button3.UseVisualStyleBackColor = false;
@@ -90,7 +91,7 @@
             // 
             button4.BackColor = Color.Bisque;
             button4.Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(378, 420);
+            button4.Location = new Point(395, 455);
             button4.Name = "button4";
             button4.Size = new Size(356, 134);
             button4.TabIndex = 4;
@@ -114,12 +115,25 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.Bisque;
+            button5.Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(408, 219);
+            button5.Name = "button5";
+            button5.Size = new Size(322, 70);
+            button5.TabIndex = 5;
+            button5.Text = "CONSULTAS";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click_1;
+            // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Peru;
             ClientSize = new Size(1139, 608);
+            Controls.Add(button5);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button4);
@@ -147,5 +161,6 @@
         protected Button button1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button button5;
     }
 }
