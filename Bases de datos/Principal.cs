@@ -52,7 +52,7 @@ namespace Bases_de_datos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 2. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))

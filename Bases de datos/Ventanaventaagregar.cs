@@ -56,7 +56,7 @@ namespace Bases_de_datos
             string fechaTexto = fechaActual.ToShortDateString(); // Convierte la fecha a formato corto
             
 
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 2. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -127,7 +127,7 @@ namespace Bases_de_datos
             
 
             // 3. Insertar la venta en la base de datos
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;"; // Reemplaza con tu cadena de conexión
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;"; // Reemplaza con tu cadena de conexión
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -364,7 +364,7 @@ namespace Bases_de_datos
 
     private int InsertarCliente(string nombre, string direccion, string email, DateTime fechaRegistro)
     {
-        string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+        string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
         using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
         {
@@ -393,7 +393,7 @@ namespace Bases_de_datos
 
     private bool InsertarTelefono(int idCliente, string telefono)
     {
-        string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+        string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
         using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
         {

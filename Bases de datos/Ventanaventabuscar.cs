@@ -35,7 +35,7 @@ namespace Bases_de_datos
             }
 
             // 2. Define la cadena de conexión
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 3. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))

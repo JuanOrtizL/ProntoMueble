@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cower\\source\\repos\\Bases de datos\\Bases de datos\\Bases de datos.csproj": {}
+    "C:\\Users\\mafel\\Source\\Repos\\ProntoMueble\\Bases de datos\\Bases de datos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cower\\source\\repos\\Bases de datos\\Bases de datos\\Bases de datos.csproj": {
+    "C:\\Users\\mafel\\Source\\Repos\\ProntoMueble\\Bases de datos\\Bases de datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cower\\source\\repos\\Bases de datos\\Bases de datos\\Bases de datos.csproj",
+        "projectUniqueName": "C:\\Users\\mafel\\Source\\Repos\\ProntoMueble\\Bases de datos\\Bases de datos.csproj",
         "projectName": "Bases de datos",
-        "projectPath": "C:\\Users\\cower\\source\\repos\\Bases de datos\\Bases de datos\\Bases de datos.csproj",
-        "packagesPath": "C:\\Users\\cower\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cower\\source\\repos\\Bases de datos\\Bases de datos\\obj\\",
+        "projectPath": "C:\\Users\\mafel\\Source\\Repos\\ProntoMueble\\Bases de datos\\Bases de datos.csproj",
+        "packagesPath": "C:\\Users\\mafel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mafel\\Source\\Repos\\ProntoMueble\\Bases de datos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\cower\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mafel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -74,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

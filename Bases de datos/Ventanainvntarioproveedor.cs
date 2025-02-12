@@ -29,7 +29,7 @@ namespace Bases_de_datos
         {
             int.TryParse(textBox2.Text, out int idcliente);
 
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {

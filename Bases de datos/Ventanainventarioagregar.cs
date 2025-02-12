@@ -54,7 +54,7 @@ namespace Bases_de_datos
             long idProveedor = long.Parse(textBox8.Text);
 
             // 2. Define la cadena de conexión
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 3. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -102,7 +102,7 @@ namespace Bases_de_datos
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 2. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -150,7 +150,7 @@ namespace Bases_de_datos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 2. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -187,7 +187,7 @@ namespace Bases_de_datos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
+            string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=1590;";
 
             // 2. Crea la conexión
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
