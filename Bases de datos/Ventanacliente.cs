@@ -73,10 +73,20 @@ namespace Bases_de_datos
                             adapter.Fill(dt);       
 
                             // 8. Muestra los resultados en el RichTextBox
-                            richTextBox1.Clear(); // Limpia el RichTextBox antes de mostrar nuevos resultados
+                            label9.Text="";
+                            label11.Text = "";
+                            label12.Text = "";
+                            label13.Text = "";
+                            label14.Text = "";
+                            label15.Text = "";
                             foreach (DataRow row in dt.Rows)
                             {
-                                richTextBox1.Text += $"  ID  Cliente: {row["id_cliente"]},    Nombre: {row["nombre"]},    Direccion: {row["direccion"]},  Fecha:   {row["fecha_registro"]},  Email:   {row["email"]},  Telefono:   {row["telefono"]}\n";
+                                label9.Text = $"ID Cliente: {row["id_cliente"]}";
+                                label11.Text = $"Nombre: {row["nombre"]}";
+                                label12.Text = $"Direccion: {row["direccion"]}";
+                                label15.Text = $"Fecha:   {row["fecha_registro"]}";
+                                label14.Text = $"Email:   {row["email"]}";
+                                label13.Text = $"Telefono:   {row["telefono"]}"; 
                             }
                         }
                     }

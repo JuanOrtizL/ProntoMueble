@@ -38,7 +38,7 @@ namespace Bases_de_datos
         }
 
 
-        
+
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace Bases_de_datos
 
             DateTime fechaActual = DateTime.Now; // Obtiene la fecha y hora actual
             string fechaTexto = fechaActual.ToShortDateString(); // Convierte la fecha a formato corto
-            
+
 
             string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
@@ -71,7 +71,7 @@ namespace Bases_de_datos
                     {
                         cmd.Parameters.AddWithValue("@id_mueble", idmueble);
 
-                        
+
                         // 5. Ejecuta el comando y crea un objeto DataTable para almacenar los resultados
                         using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
                         {
@@ -96,7 +96,7 @@ namespace Bases_de_datos
                 catch (Exception ex)
                 {
                     // 7. Muestra un mensaje de error si la conexión falla
-                    MessageBox.Show("Error al mostrar el subtotal: " + ex.Message);
+                    MessageBox.Show("Error al mostrar el subtotal: no hay inventario suficiente ");
                 }
             }
         }
@@ -124,7 +124,7 @@ namespace Bases_de_datos
             string medio_pago = comboBox1.Text;
 
             // 2. Calcular el subtotal (si no se proporciona directamente)
-            
+
 
             // 3. Insertar la venta en la base de datos
             string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;"; // Reemplaza con tu cadena de conexión
@@ -137,9 +137,9 @@ namespace Bases_de_datos
                 try
                 {
                     // Insertar en la tabla venta
-                    
+
                     string sqlVenta = "INSERT INTO venta (id_cliente, id_vendedor, fecha,total) VALUES (@idCliente, @idVendedor, @fecha,@total) RETURNING id_venta";
-                    long idVenta = 0; 
+                    long idVenta = 0;
 
                     using (NpgsqlCommand cmdVenta = new NpgsqlCommand(sqlVenta, conn))
                     {
@@ -165,7 +165,7 @@ namespace Bases_de_datos
                     using (NpgsqlCommand cmdDetalle = new NpgsqlCommand(sqlDetalle, conn))
                     {
                         cmdDetalle.Parameters.AddWithValue("@idVenta", idVenta);
-                        cmdDetalle.Parameters.AddWithValue("@idmueble", idmueble);  
+                        cmdDetalle.Parameters.AddWithValue("@idmueble", idmueble);
                         cmdDetalle.Parameters.AddWithValue("@cantidad", cantidad);
                         cmdDetalle.Parameters.AddWithValue("@subtotal", subtotal);
 
@@ -177,8 +177,8 @@ namespace Bases_de_datos
                     using (NpgsqlCommand cmdDetalle = new NpgsqlCommand(sqlpago, conn))
                     {
                         cmdDetalle.Parameters.AddWithValue("@idVenta", idVenta);
-                        cmdDetalle.Parameters.AddWithValue("@mediopago",medio_pago);
-                        cmdDetalle.Parameters.AddWithValue("@subtotal", subtotal);              
+                        cmdDetalle.Parameters.AddWithValue("@mediopago", medio_pago);
+                        cmdDetalle.Parameters.AddWithValue("@subtotal", subtotal);
 
                         cmdDetalle.ExecuteNonQuery();
                     }
@@ -196,93 +196,98 @@ namespace Bases_de_datos
 
 
 
+        }
+
+        private void Ventanaventaagregar_Load(object sender, EventArgs e)
+        {
+
+        }
+        /*// 1. Obtener datos de la venta
+int idCliente = int.Parse(txtIdCliente.Text); // Reemplaza con el control adecuado
+int idVendedor = int.Parse(txtIdVendedor.Text); // Reemplaza con el control adecuado
+DateTime fecha = dtpFecha.Value; // Reemplaza con el control DateTimePicker
+
+// 2. Iniciar transacción
+using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+{
+   conn.Open();
+   using (NpgsqlTransaction transaction = conn.BeginTransaction())
+   {
+       try
+       {
+           // 3. Insertar venta
+           int idVenta = InsertarVenta(conn, transaction, idCliente, idVendedor, fecha);
+
+           // 4. Insertar muebles vendidos
+           InsertarMueblesVendidos(conn, transaction, idVenta);
+
+           // 5. Insertar pago
+           InsertarPago(conn, transaction, idVenta);
+
+           // 6. Confirmar transacción
+           transaction.Commit();
+           MessageBox.Show("Venta registrada correctamente.");
+       }
+       catch (Exception ex)
+       {
+           // 7. Revertir transacción en caso de error
+           transaction.Rollback();
+           MessageBox.Show("Error al registrar venta: " + ex.Message);
+       }
+   }
+}
+}
+
+private int InsertarVenta(NpgsqlConnection conn, NpgsqlTransaction transaction, int idCliente, int idVendedor, DateTime fecha)
+{
+using (NpgsqlCommand cmdVenta = new NpgsqlCommand("INSERT INTO venta (id_cliente, id_vendedor, fecha) VALUES (@idCliente, @idVendedor, @fecha) RETURNING id_venta", conn, transaction))
+{
+   cmdVenta.Parameters.AddWithValue("@idCliente", idCliente);
+   cmdVenta.Parameters.AddWithValue("@idVendedor", idVendedor);
+   cmdVenta.Parameters.AddWithValue("@fecha", fecha);
+
+   return (int)cmdVenta.ExecuteScalar();
+}
+}
+
+private void InsertarMueblesVendidos(NpgsqlConnection conn, NpgsqlTransaction transaction, int idVenta)
+{
+foreach (DataGridViewRow row in dgvMuebles.Rows) // Reemplaza dgvMuebles con tu DataGridView
+{
+   // Verifica si la fila está vacía
+   if (row.IsNewRow) continue;
+
+   int idMueble = int.Parse(row.Cells["id_mueble"].Value.ToString()); // Reemplaza "id_mueble" con el nombre de la columna
+   int cantidad = int.Parse(row.Cells["cantidad"].Value.ToString()); // Reemplaza "cantidad" con el nombre de la columna
+   decimal subtotal = decimal.Parse(row.Cells["subtotal"].Value.ToString()); // Reemplaza "subtotal" con el nombre de la columna
+
+   using (NpgsqlCommand cmdMuebleVenta = new NpgsqlCommand("INSERT INTO mueble_venta (id_venta, id_mueble, cantidad, subtotal) VALUES (@idVenta, @idMueble, @cantidad, @subtotal)", conn, transaction))
+   {
+       cmdMuebleVenta.Parameters.AddWithValue("@idVenta", idVenta);
+       cmdMuebleVenta.Parameters.AddWithValue("@idMueble", idMueble);
+       cmdMuebleVenta.Parameters.AddWithValue("@cantidad", cantidad);
+       cmdMuebleVenta.Parameters.AddWithValue("@subtotal", subtotal);
+
+       cmdMuebleVenta.ExecuteNonQuery();
+   }
+}
+}
+
+private void InsertarPago(NpgsqlConnection conn, NpgsqlTransaction transaction, int idVenta)
+{
+string medioPago = txtMedioPago.Text; // Reemplaza con el control adecuado
+decimal total = decimal.Parse(txtTotal.Text); // Reemplaza con el control adecuado
+
+using (NpgsqlCommand cmdPago = new NpgsqlCommand("INSERT INTO pago (id_venta, medio_pago, total) VALUES (@idVenta, @medioPago, @total)", conn, transaction))
+{
+   cmdPago.Parameters.AddWithValue("@idVenta", idVenta);
+   cmdPago.Parameters.AddWithValue("@medioPago", medioPago);
+   cmdPago.Parameters.AddWithValue("@total", total);
+
+   cmdPago.ExecuteNonQuery();
+}*/
     }
-            /*// 1. Obtener datos de la venta
-            int idCliente = int.Parse(txtIdCliente.Text); // Reemplaza con el control adecuado
-            int idVendedor = int.Parse(txtIdVendedor.Text); // Reemplaza con el control adecuado
-            DateTime fecha = dtpFecha.Value; // Reemplaza con el control DateTimePicker
-
-            // 2. Iniciar transacción
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
-                using (NpgsqlTransaction transaction = conn.BeginTransaction())
-                {
-                    try
-                    {
-                        // 3. Insertar venta
-                        int idVenta = InsertarVenta(conn, transaction, idCliente, idVendedor, fecha);
-
-                        // 4. Insertar muebles vendidos
-                        InsertarMueblesVendidos(conn, transaction, idVenta);
-
-                        // 5. Insertar pago
-                        InsertarPago(conn, transaction, idVenta);
-
-                        // 6. Confirmar transacción
-                        transaction.Commit();
-                        MessageBox.Show("Venta registrada correctamente.");
-                    }
-                    catch (Exception ex)
-                    {
-                        // 7. Revertir transacción en caso de error
-                        transaction.Rollback();
-                        MessageBox.Show("Error al registrar venta: " + ex.Message);
-                    }
-                }
-            }
-        }
-
-        private int InsertarVenta(NpgsqlConnection conn, NpgsqlTransaction transaction, int idCliente, int idVendedor, DateTime fecha)
-        {
-            using (NpgsqlCommand cmdVenta = new NpgsqlCommand("INSERT INTO venta (id_cliente, id_vendedor, fecha) VALUES (@idCliente, @idVendedor, @fecha) RETURNING id_venta", conn, transaction))
-            {
-                cmdVenta.Parameters.AddWithValue("@idCliente", idCliente);
-                cmdVenta.Parameters.AddWithValue("@idVendedor", idVendedor);
-                cmdVenta.Parameters.AddWithValue("@fecha", fecha);
-
-                return (int)cmdVenta.ExecuteScalar();
-            }
-        }
-
-        private void InsertarMueblesVendidos(NpgsqlConnection conn, NpgsqlTransaction transaction, int idVenta)
-        {
-            foreach (DataGridViewRow row in dgvMuebles.Rows) // Reemplaza dgvMuebles con tu DataGridView
-            {
-                // Verifica si la fila está vacía
-                if (row.IsNewRow) continue;
-
-                int idMueble = int.Parse(row.Cells["id_mueble"].Value.ToString()); // Reemplaza "id_mueble" con el nombre de la columna
-                int cantidad = int.Parse(row.Cells["cantidad"].Value.ToString()); // Reemplaza "cantidad" con el nombre de la columna
-                decimal subtotal = decimal.Parse(row.Cells["subtotal"].Value.ToString()); // Reemplaza "subtotal" con el nombre de la columna
-
-                using (NpgsqlCommand cmdMuebleVenta = new NpgsqlCommand("INSERT INTO mueble_venta (id_venta, id_mueble, cantidad, subtotal) VALUES (@idVenta, @idMueble, @cantidad, @subtotal)", conn, transaction))
-                {
-                    cmdMuebleVenta.Parameters.AddWithValue("@idVenta", idVenta);
-                    cmdMuebleVenta.Parameters.AddWithValue("@idMueble", idMueble);
-                    cmdMuebleVenta.Parameters.AddWithValue("@cantidad", cantidad);
-                    cmdMuebleVenta.Parameters.AddWithValue("@subtotal", subtotal);
-
-                    cmdMuebleVenta.ExecuteNonQuery();
-                }
-            }
-        }
-
-        private void InsertarPago(NpgsqlConnection conn, NpgsqlTransaction transaction, int idVenta)
-        {
-            string medioPago = txtMedioPago.Text; // Reemplaza con el control adecuado
-            decimal total = decimal.Parse(txtTotal.Text); // Reemplaza con el control adecuado
-
-            using (NpgsqlCommand cmdPago = new NpgsqlCommand("INSERT INTO pago (id_venta, medio_pago, total) VALUES (@idVenta, @medioPago, @total)", conn, transaction))
-            {
-                cmdPago.Parameters.AddWithValue("@idVenta", idVenta);
-                cmdPago.Parameters.AddWithValue("@medioPago", medioPago);
-                cmdPago.Parameters.AddWithValue("@total", total);
-
-                cmdPago.ExecuteNonQuery();
-            }*/
-        }
-    }
+}
     /*private void InsertarPago(NpgsqlConnection conn, NpgsqlTransaction transaction, int idVenta)
         {
             string medioPago = txtMedioPago.Text; // Reemplaza con el control adecuado

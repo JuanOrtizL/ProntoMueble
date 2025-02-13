@@ -30,14 +30,14 @@
         {
             button1 = new Button();
             button2 = new Button();
-            richTextBox1 = new RichTextBox();
             label1 = new Label();
+            richTextBox1 = new RichTextBox();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(477, 499);
+            button1.Location = new Point(513, 497);
             button1.Name = "button1";
             button1.Size = new Size(98, 43);
             button1.TabIndex = 0;
@@ -55,6 +55,16 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(412, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(242, 50);
+            label1.TabIndex = 25;
+            label1.Text = "INVENTARIO";
+            // 
             // richTextBox1
             // 
             richTextBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -65,16 +75,6 @@
             richTextBox1.TabIndex = 24;
             richTextBox1.Text = "";
             richTextBox1.TextChanged += richTextBox1_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(412, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(242, 50);
-            label1.TabIndex = 25;
-            label1.Text = "INVENTARIO";
             // 
             // VentanaInventarioinventario
             // 
@@ -97,7 +97,7 @@
 
         private Button button1;
         private Button button2;
-        private RichTextBox richTextBox1;
         private Label label1;
+        private RichTextBox richTextBox1;
     }
 }

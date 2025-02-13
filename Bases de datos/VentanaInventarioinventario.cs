@@ -38,7 +38,7 @@ namespace Bases_de_datos
                     conn.Open();
 
                     // 4. Crea el comando SQL para seleccionar todos los datos de la tabla "mueble"
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM mueble", conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT m.id_mueble , m.alto_dimensiones, m.ancho_dimensiones, m.largo_dimensiones, m.precio, m.stock,p.id_proveedor,  c.nombre AS nombre_color,   ma.nombre AS nombre_material,   t.nombre AS nombre_tipo FROM mueble m join color c on (m.id_color = c.id_color) join tipo t on (m.id_tipo = t.id_tipo) join material ma on (m.id_material = ma.id_material) join proveedor p on (m.id_proveedor = p.id_proveedor)", conn))
                     {
 
                         // 5. Ejecuta el comando y crea un objeto DataTable para almacenar los resultados
@@ -50,7 +50,7 @@ namespace Bases_de_datos
                             // 6. Itera a través de las filas de la tabla y agrega la información al RichTextBox
                             foreach (DataRow row in dt.Rows)
                             {
-                                richTextBox1.Text += $"ID: {row["id_mueble"]}, Alto: {row["alto_dimensiones"]}, Ancho: {row["ancho_dimensiones"]}, Largo: {row["largo_dimensiones"]}, Precio: {row["precio"]}, Stock: {row["stock"]}, ID Color: {row["id_color"]}, ID Material: {row["id_material"]}, ID Tipo: {row["id_tipo"]}, ID Proveedor: {row["id_proveedor"]}\n";
+                                richTextBox1.Text += $"ID: {row["id_mueble"]}, Alto: {row["alto_dimensiones"]}, Ancho: {row["ancho_dimensiones"]}, Largo: {row["largo_dimensiones"]}, Precio: {row["precio"]}, Stock: {row["stock"]},  Color: {row["nombre_color"]},  Material: {row["nombre_material"]},  Tipo: {row["nombre_tipo"]}, ID Proveedor: {row["id_proveedor"]}\n\n\n\n";
                             }
                         }
                     }

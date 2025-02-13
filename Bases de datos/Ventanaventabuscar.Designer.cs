@@ -61,7 +61,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(209, 128);
+            textBox2.Location = new Point(167, 115);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(209, 23);
             textBox2.TabIndex = 21;
@@ -90,11 +90,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(419, 29);
+            label1.Location = new Point(366, 28);
             label1.Name = "label1";
-            label1.Size = new Size(305, 65);
+            label1.Size = new Size(370, 65);
             label1.TabIndex = 25;
-            label1.Text = "buscar venta";
+            label1.Text = "BUSCAR VENTA";
             // 
             // Ventanaventabuscar
             // 

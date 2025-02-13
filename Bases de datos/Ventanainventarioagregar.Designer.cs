@@ -50,6 +50,21 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            textBox12 = new TextBox();
+            label18 = new Label();
+            label19 = new Label();
+            label20 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -221,7 +236,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(76, 69);
+            label5.Location = new Point(76, 28);
             label5.Name = "label5";
             label5.Size = new Size(101, 30);
             label5.TabIndex = 31;
@@ -231,7 +246,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(291, 69);
+            label6.Location = new Point(291, 28);
             label6.Name = "label6";
             label6.Size = new Size(58, 30);
             label6.TabIndex = 32;
@@ -241,7 +256,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(501, 69);
+            label7.Location = new Point(501, 28);
             label7.Name = "label7";
             label7.Size = new Size(109, 30);
             label7.TabIndex = 33;
@@ -257,12 +272,159 @@
             label8.TabIndex = 34;
             label8.Text = "Ingresar datos del mueble";
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(708, 215);
+            label9.Name = "label9";
+            label9.Size = new Size(34, 15);
+            label9.TabIndex = 35;
+            label9.Text = "ALTO";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(832, 215);
+            label10.Name = "label10";
+            label10.Size = new Size(50, 15);
+            label10.TabIndex = 36;
+            label10.Text = "ANCHO";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(970, 215);
+            label11.Name = "label11";
+            label11.Size = new Size(45, 15);
+            label11.TabIndex = 37;
+            label11.Text = "LARGO";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(708, 289);
+            label12.Name = "label12";
+            label12.Size = new Size(47, 15);
+            label12.TabIndex = 38;
+            label12.Text = "PRECIO";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(832, 289);
+            label13.Name = "label13";
+            label13.Size = new Size(32, 15);
+            label13.TabIndex = 39;
+            label13.Text = "TIPO";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(969, 289);
+            label14.Name = "label14";
+            label14.Size = new Size(46, 15);
+            label14.TabIndex = 40;
+            label14.Text = "COLOR";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(708, 370);
+            label15.Name = "label15";
+            label15.Size = new Size(61, 15);
+            label15.TabIndex = 41;
+            label15.Text = "MATERIAL";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(832, 370);
+            label16.Name = "label16";
+            label16.Size = new Size(73, 15);
+            label16.TabIndex = 42;
+            label16.Text = "PROVEEDOR";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(969, 370);
+            label17.Name = "label17";
+            label17.Size = new Size(41, 15);
+            label17.TabIndex = 43;
+            label17.Text = "SOTCK";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(76, 72);
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "COLOR";
+            textBox5.Size = new Size(100, 23);
+            textBox5.TabIndex = 44;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(275, 72);
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "TIPO";
+            textBox6.Size = new Size(100, 23);
+            textBox6.TabIndex = 45;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(501, 72);
+            textBox12.Name = "textBox12";
+            textBox12.PlaceholderText = "MATERIAL";
+            textBox12.Size = new Size(100, 23);
+            textBox12.TabIndex = 46;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(24, 75);
+            label18.Name = "label18";
+            label18.Size = new Size(46, 15);
+            label18.TabIndex = 47;
+            label18.Text = "COLOR";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(237, 75);
+            label19.Name = "label19";
+            label19.Size = new Size(32, 15);
+            label19.TabIndex = 48;
+            label19.Text = "TIPO";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(434, 75);
+            label20.Name = "label20";
+            label20.Size = new Size(61, 15);
+            label20.TabIndex = 49;
+            label20.Text = "MATERIAL";
+            // 
             // Ventanainventarioagregar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1139, 608);
+            Controls.Add(label20);
+            Controls.Add(label19);
+            Controls.Add(label18);
+            Controls.Add(textBox12);
+            Controls.Add(textBox6);
+            Controls.Add(textBox5);
+            Controls.Add(label17);
+            Controls.Add(label16);
+            Controls.Add(label15);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -316,5 +478,20 @@
         private Label label6;
         private Label label7;
         private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private TextBox textBox12;
+        private Label label18;
+        private Label label19;
+        private Label label20;
     }
 }

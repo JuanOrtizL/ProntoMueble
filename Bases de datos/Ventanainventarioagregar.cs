@@ -102,6 +102,9 @@ namespace Bases_de_datos
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            String color = textBox5.Text;
+
             string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
             // 2. Crea la conexión
@@ -113,8 +116,10 @@ namespace Bases_de_datos
                     conn.Open();
 
                     // 4. Crea el comando SQL para seleccionar todos los datos de la tabla "color"
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM color", conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM color where nombre = @color ", conn))
                     {
+                        cmd.Parameters.AddWithValue("@color", color);
+                        
                         // 5. Ejecuta el comando y crea un objeto DataTable para almacenar los resultados
                         using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
                         {
@@ -150,6 +155,9 @@ namespace Bases_de_datos
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+           
+            String tipo = textBox6.Text;
             string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
             // 2. Crea la conexión
@@ -161,8 +169,10 @@ namespace Bases_de_datos
                     conn.Open();
 
                     // 4. Crea el comando SQL para seleccionar todos los datos de la tabla "color"
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM tipo", conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM tipo where nombre = @tipo", conn))
                     {
+                        cmd.Parameters.AddWithValue("@tipo", tipo);
+                        
                         // 5. Ejecuta el comando y crea un objeto DataTable para almacenar los resultados
                         using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
                         {
@@ -187,6 +197,8 @@ namespace Bases_de_datos
 
         private void button5_Click(object sender, EventArgs e)
         {
+            
+            String material = textBox12.Text;
             string connectionString = "Server=localhost;Port=5432;Database=prontomueble;User Id=postgres;Password=12345;";
 
             // 2. Crea la conexión
@@ -198,8 +210,10 @@ namespace Bases_de_datos
                     conn.Open();
 
                     // 4. Crea el comando SQL para seleccionar todos los datos de la tabla "color"
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM material", conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM material where nombre = @material", conn))
                     {
+                        cmd.Parameters.AddWithValue("@material", material);
+                        String color = textBox5.Text;
                         // 5. Ejecuta el comando y crea un objeto DataTable para almacenar los resultados
                         using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
                         {
@@ -221,5 +235,7 @@ namespace Bases_de_datos
                 }
             }
         }
+
+        
     }
 }

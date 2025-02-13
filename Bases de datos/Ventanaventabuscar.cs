@@ -48,12 +48,14 @@ namespace Bases_de_datos
                     // 5. Crea el comando SQL con parámetros
                     using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT v.id_venta, v.id_cliente, v.id_vendedor, v.fecha, mv.id_mueble, mv.cantidad, v.total FROM venta v INNER JOIN mueble_venta mv ON v.id_venta = mv.id_venta WHERE v.id_venta = @id_venta", conn))
                     {
+                        
                         // 6. Asigna el valor del parámetro
                         cmd.Parameters.AddWithValue("@id_venta", idVenta);
 
                         // 7. Ejecuta el comando y crea un objeto DataTable para almacenar los resultados
                         using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd))
                         {
+                            
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
 
@@ -61,7 +63,7 @@ namespace Bases_de_datos
                             richTextBox1.Clear(); // Limpia el RichTextBox antes de mostrar nuevos resultados
                             foreach (DataRow row in dt.Rows)
                             {
-                                richTextBox1.Text += $"ID  Venta: {row["id_venta"]},  ID Cliente: {row["id_cliente"]},  ID Vendedor: {row["id_vendedor"]},  Fecha: {row["fecha"]},  ID Mueble: {row["id_mueble"]},  Cantidad: {row["cantidad"]},  Total: {row["total"]}\n";
+                                richTextBox1.Text += $"ID  Venta: {row["id_venta"]},  ID Cliente: {row["id_cliente"]},  ID Vendedor: {row["id_vendedor"]},  Fecha: {row["fecha"]},  ID Mueble: {row["id_mueble"]},  Cantidad: {row["cantidad"]},  Total: {row["total"]}\n\n\n";
                             }
                         }
                     }
