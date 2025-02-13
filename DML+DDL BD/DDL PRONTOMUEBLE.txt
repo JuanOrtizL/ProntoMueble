@@ -221,9 +221,17 @@ RETURNS TRIGGER
 AS 
 $$
 BEGIN
+  -- Verificar si hay suficiente stock antes de restar
+  IF (SELECT stock FROM mueble WHERE id_mueble = NEW.id_mueble) < NEW.cantidad THEN
+    RAISE EXCEPTION 'No hay suficiente stock para la venta. Stock disponible: %, Cantidad requerida: %',
+    (SELECT stock FROM mueble WHERE id_mueble = NEW.id_mueble), NEW.cantidad;
+  END IF;
+
+  -- Si hay stock suficiente, actualizar
   UPDATE mueble
   SET stock = stock - NEW.cantidad
   WHERE id_mueble = NEW.id_mueble;
+
   RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
@@ -235,8 +243,8 @@ FOR EACH ROW
 EXECUTE FUNCTION actualizar_stock_mueble();
 
 
-INSERT INTO mueble_venta (id_venta, id_mueble, cantidad, subtotal)
-VALUES (2, 5, 2, 200.00);
+--INSERT INTO mueble_venta (id_venta, id_mueble, cantidad, subtotal)
+--VALUES (2, 5, 2, 200.00);
 
 
 -- Calcular el Total Venta

@@ -1,16 +1,16 @@
 -- Insertando datos en proveedor
 
 INSERT INTO proveedor (nombre, persona_contacto, direccion) VALUES
-('Muebles Fina', 'Carlos Pérez', 'Av. Central #123'),
-('Hogar Perfecto', 'Ana Gómez', 'Calle 10 #45'),
-('Diseño Total', 'Luis Rodríguez', 'Boulevard Reforma #789'),
+('Muebles Fina', 'Carlos Perez', 'Av. Central #123'),
+('Hogar Perfecto', 'Ana Gomez', 'Calle 10 #45'),
+('Diseño Total', 'Luis Rodriguez', 'Boulevard Reforma #789'),
 ('Deco Hogar', 'Sergio Mendoza', 'Av. Reforma #321'),
 ('Interiores Chic', 'Valeria Soto', 'Calle Alameda #567'),
-('Estilo Moderno', 'Roberto Díaz', 'Paseo del Prado #678'),
-('Mueblería Clásica', 'Elena Torres', 'Plaza Mayor #901'),
-('Elegance Home', 'Daniel Fernández', 'Centro Histórico #234'),
-('Vanguard Muebles', 'Patricia León', 'Boulevard Central #876'),
-('Arte & Diseño', 'Mario Guzmán', 'Callejón del Arte #543');
+('Estilo Moderno', 'Roberto Diaz', 'Paseo del Prado #678'),
+('Muebleria Clasica', 'Elena Torres', 'Plaza Mayor #901'),
+('Elegance Home', 'Daniel Fernandez', 'Centro Historico #234'),
+('Vanguard Muebles', 'Patricia Leon', 'Boulevard Central #876'),
+('Arte & Diseño', 'Mario Guzman', 'Callejon del Arte #543');
 
 -- Insertando datos en telefono_proveedor
 
@@ -29,51 +29,51 @@ INSERT INTO telefono_proveedor (id_proveedor, telefono) VALUES
 -- Insertando datos en color
 
 INSERT INTO color (nombre) VALUES
-('Rojo'), ('Azul'), ('Verde'), ('Negro'), ('Blanco'), ('Gris'), ('Amarillo'), ('Marrón'), ('Naranja'), ('Beige'),
+('Rojo'), ('Azul'), ('Verde'), ('Negro'), ('Blanco'), ('Gris'), ('Amarillo'), ('Marron'), ('Naranja'), ('Beige'),
 ('Turquesa'), ('Violeta'), ('Celeste'), ('Dorado'), ('Plata'), ('Magenta'), ('Cian'), ('Coral'), ('Esmeralda'), ('Mostaza');
 
 -- Insertando datos en material
 
 INSERT INTO material (nombre) VALUES
-('Madera'), ('Metal'), ('Plástico'), ('Vidrio'), ('Cuero'), ('Aluminio'), ('Hierro'), ('Tela'), ('Cemento'), ('Piedra'),
-('Mármol'), ('Cartón'), ('Bambú'), ('Acrílico'), ('Fibra de Carbono'), ('Polipropileno'), ('Goma'), ('Latón'), ('Resina'), ('Ratán');
+('Madera'), ('Metal'), ('Plastico'), ('Vidrio'), ('Cuero'), ('Aluminio'), ('Hierro'), ('Tela'), ('Cemento'), ('Piedra'),
+('Marmol'), ('Carton'), ('Bambu'), ('Acrilico'), ('Fibra de Carbono'), ('Polipropileno'), ('Goma'), ('Laton'), ('Resina'), ('Ratan');
 
 -- Insertando datos en tipo
 
 INSERT INTO tipo (nombre) VALUES
-('Silla'), ('Mesa'), ('Sofá'), ('Cama'), ('Escritorio'), ('Librero'), ('Banco'), ('Armario'), ('Cómoda'), ('Taburete'),
-('Repisa'), ('Esquinero'), ('Puff'), ('Zapatero'), ('Vitrina'), ('Perchero'), ('Estantería'), ('Diván'), ('Panel'), ('Baúl');
+('Silla'), ('Mesa'), ('Sofa'), ('Cama'), ('Escritorio'), ('Librero'), ('Banco'), ('Armario'), ('Comoda'), ('Taburete'),
+('Repisa'), ('Esquinero'), ('Puff'), ('Zapatero'), ('Vitrina'), ('Perchero'), ('Estanteria'), ('Divan'), ('Panel'), ('Baul');
 
 -- Insertando datos en mueble
 
 INSERT INTO mueble (alto_dimensiones, ancho_dimensiones, largo_dimensiones, precio, stock, id_color, id_material, id_tipo, id_proveedor) VALUES
 (100, 50, 50, 1500, 10, 1, 1, 1, 3),
-(75, 120, 60, 2500, 5, 2, 2, 2, 10),
-(90, 200, 80, 5000, 3, 3, 3, 3, 17),
-(110, 60, 70, 1800, 8, 4, 4, 4, 24),
-(95, 100, 55, 2200, 6, 5, 5, 5, 31),
-(85, 140, 75, 3200, 4, 6, 6, 6, 38),
-(100, 130, 90, 4500, 2, 7, 7, 7, 45),
-(120, 150, 95, 5500, 7, 8, 8, 8, 52),
-(110, 170, 85, 6000, 5, 9, 9, 9, 59),
-(105, 160, 80, 7000, 3, 10, 10, 10, 66);
+(75, 120, 60, 2500, 15, 2, 2, 2, 10),
+(90, 200, 80, 5000, 10, 3, 3, 3, 17),
+(110, 60, 70, 1800, 18, 4, 4, 4, 24),
+(95, 100, 55, 2200, 16, 5, 5, 5, 31),
+(85, 140, 75, 3200, 14, 6, 6, 6, 38),
+(100, 130, 90, 4500, 12, 7, 7, 7, 45),
+(120, 150, 95, 5500, 17, 8, 8, 8, 52),
+(110, 170, 85, 6000, 15, 9, 9, 9, 59),
+(105, 160, 80, 7000, 13, 10, 10, 10, 66);
 
 -- Insertando datos en cliente
 
 INSERT INTO cliente (nombre, direccion, email, fecha_registro) VALUES
-('Pedro López', 'Calle Falsa #123', 'pedro@email.com', '2024-02-01'),
-('María Ramírez', 'Av. Siempre Viva #456', 'maria@email.com', '2024-02-02'),
+('Pedro Lopez', 'Calle Falsa #123', 'pedro@email.com', '2024-02-01'),
+('Maria Ramirez', 'Av. Siempre Viva #456', 'maria@email.com', '2024-02-02'),
 ('Juan Torres', 'Paseo del Sol #789', 'juan@email.com', '2024-02-03'),
-('Luis Fernández', 'Calle Independencia #890', 'luis@email.com', '2024-02-04'),
-('Sofía Martínez', 'Plaza Libertad #567', 'sofia@email.com', '2024-02-05'),
-('Alejandro Gómez', 'Av. Los Pinos #432', 'alejandro@email.com', '2024-02-06'),
-('Valentina Ríos', 'Calle del Bosque #765', 'valentina@email.com', '2024-02-07'),
+('Luis Fernandez', 'Calle Independencia #890', 'luis@email.com', '2024-02-04'),
+('Sofia Martinez', 'Plaza Libertad #567', 'sofia@email.com', '2024-02-05'),
+('Alejandro Gomez', 'Av. Los Pinos #432', 'alejandro@email.com', '2024-02-06'),
+('Valentina Rios', 'Calle del Bosque #765', 'valentina@email.com', '2024-02-07'),
 ('Andrea Castillo', 'Calle Aurora #210', 'andrea@email.com', '2024-02-08'),
 ('Gabriel Moreno', 'Avenida Central #341', 'gabriel@email.com', '2024-02-09'),
 ('Fernanda Reyes', 'Boulevard Norte #121', 'fernanda@email.com', '2024-02-10'),
-('Daniela Suárez', 'Calle Estrella #555', 'daniela@email.com', '2024-02-11'),
-('Hugo Beltrán', 'Avenida del Sol #789', 'hugo@email.com', '2024-02-12'),
-('Carla Montes', 'Calle Jardín #333', 'carla@email.com', '2024-02-13'),
+('Daniela Suarez', 'Calle Estrella #555', 'daniela@email.com', '2024-02-11'),
+('Hugo Beltran', 'Avenida del Sol #789', 'hugo@email.com', '2024-02-12'),
+('Carla Montes', 'Calle Jardin #333', 'carla@email.com', '2024-02-13'),
 ('Juan Ortiz', 'calle 56 a', 'm@email.com', '2025-02-10');
 
 
@@ -97,11 +97,11 @@ INSERT INTO telefono_cliente (id_cliente, telefono) VALUES
 -- Insertando datos en vendedor
 
 INSERT INTO vendedor (nombre, email, password) VALUES
-('Laura Méndez', 'laura@email.com', 'pass123'),
+('Laura Mendez', 'laura@email.com', 'pass123'),
 ('Carlos Ruiz', 'carlos@email.com', 'secure456'),
-('Ana Beltrán', 'ana@email.com', 'clave789'),
+('Ana Beltran', 'ana@email.com', 'clave789'),
 ('Jorge Castillo', 'jorge@email.com', 'admin234'),
-('Fernanda López', 'fernanda@email.com', 'pass567'),
+('Fernanda Lopez', 'fernanda@email.com', 'pass567'),
 ('Ricardo Torres', 'ricardo@email.com', 'clave321');
 
 -- Insertando datos en venta
